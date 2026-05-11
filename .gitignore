@@ -1,0 +1,20 @@
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor noise
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Local-only env or credentials (none expected, but defensive)
+.env
+.env.local
+*.pem
+*.key
+
+# Internal deploy / positioning notes — not part of the published site
+README.md
