@@ -1,0 +1,62 @@
+---
+import Base from '../../layouts/Base.astro';
+import { services, getService } from '../../data/services.js';
+
+export function getStaticPaths() {
+  return services.map((s) => ({ params: { slug: s.slug }, props: { service: s } }));
+}
+
+const { service } = Astro.props;
+const related = service.related.map((slug) => getService(slug)).filter(Boolean);
+---
+<Base title={service.name} description={service.summary}>
+  <section class="page-head">
+    <div class="wrap">
+      <p class="crumbs">
+        <a href="/">Home</a><span class="sep">/</span>
+        <a href="/services">Services</a><span class="sep">/</span>
+        <span class="here">{service.nav}</span>
+      </p>
+      <h1>{service.name}</h1>
+      <p class="lede">{service.lede}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap detail">
+      <div class="detail-main">
+        <h2>What it is</h2>
+        {service.whatItIs.map((p) => <p>{p}</p>)}
+
+        <h2>What you get</h2>
+        <ul class="check-list">
+          {service.deliverables.map((d) => <li>{d}</li>)}
+        </ul>
+
+        <h2>How it works</h2>
+        {service.howItWorks.map((p) => <p>{p}</p>)}
+
+        <div class="related">
+          <h3>Related lanes</h3>
+          <div class="related-links">
+            {related.map((r) => <a href={`/services/${r.slug}`}>{r.name}</a>)}
+          </div>
+        </div>
+      </div>
+
+      <aside class="detail-side">
+        <div class="side-card">
+          <h3>When you'd want this</h3>
+          <ul>
+            {service.whenYouWant.map((w) => <li>{w}</li>)}
+          </ul>
+        </div>
+        <div class="cta-box">
+          <h3>Start a conversation</h3>
+          <p>Tell us what you're trying to figure out. Intro calls are 30 minutes, no charge.</p>
+          <a href="/contact" class="btn">Get in touch</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+</Base>

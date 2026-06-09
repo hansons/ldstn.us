@@ -1,0 +1,24 @@
+---
+const year = 2026;
+const cols = [
+  { href: '/services', label: 'Services' },
+  { href: '/approach', label: 'Approach' },
+  { href: '/pricing', label: 'Pricing' },
+  { href: '/turnkey', label: 'Turnkey' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="Footer" style="display:flex;flex-wrap:wrap;gap:18px;margin-bottom:14px;">
+      {cols.map((c) => (
+        <a href={c.href} style="color:var(--muted);font-size:0.9rem;">{c.label}</a>
+      ))}
+    </nav>
+    <p>
+      &copy; {year} Lodestone Consulting LLC · Oregon DLLC #256545097 ·
+      <a href="https://www.linkedin.com/in/ryan-hanson-0a766b30/" target="_blank" rel="noopener">LinkedIn</a>
+    </p>
+  </div>
+</footer>

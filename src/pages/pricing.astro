@@ -1,0 +1,68 @@
+---
+import Base from '../layouts/Base.astro';
+
+const description =
+  'Published Lodestone Consulting rates: day rate, hourly tiers, fixed-price engagements, and retainers. Detailed quotes follow discovery. Turnkey institutional systems are priced separately.';
+---
+<Base title="Pricing" description={description}>
+  <section class="page-head">
+    <div class="wrap">
+      <p class="crumbs"><a href="/">Home</a><span class="sep">/</span><span class="here">Pricing</span></p>
+      <h1>Pricing</h1>
+      <p class="lede">Published rates so you can plan. Detailed quotes come after discovery, once the scope is real.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>Day rate</h3>
+          <p class="price">$1,500<span>/day</span></p>
+          <p>For workshops, knowledge-capture sessions, audit fieldwork, and hands-on stand-ups. Onsite or remote. Day-shaped engagements often pair two days with a one-to-two week gap between them so the work has time to land.</p>
+        </div>
+
+        <div class="price-card">
+          <h3>Hourly</h3>
+          <p class="price">$250–$600<span>/hr</span></p>
+          <ul class="rate-tiers">
+            <li><span class="rate-name">Implementation</span><span class="rate-price">$250</span></li>
+            <li><span class="rate-name">Consultation</span><span class="rate-price">$400</span></li>
+            <li><span class="rate-name">LLM system architect</span><span class="rate-price">$500</span></li>
+            <li><span class="rate-name">Regulatory system architect</span><span class="rate-price">$600</span></li>
+          </ul>
+          <p>Two-hour minimum per session.</p>
+        </div>
+
+        <div class="price-card">
+          <h3>Fixed-price</h3>
+          <p class="price">$5K–$40K</p>
+          <p>Audits, document production, design sprints, and proofs of concept on a fixed price once scope is clear. Range depends on organizational complexity and regulatory surface.</p>
+        </div>
+
+        <div class="price-card">
+          <h3>Retainer</h3>
+          <p class="price">From $3,000<span>/mo</span></p>
+          <p>Three tiers from periodic advisory (10 hrs/mo) to embedded involvement (40 hrs/mo). Thirty days' notice to cancel. For teams that need ongoing guidance as they build, audit, or document.</p>
+        </div>
+      </div>
+
+      <p class="footnote">
+        Travel reimbursed at cost with prior approval. Travel time billed at half the applicable hourly rate.
+        Payment terms net-15. Rates are exclusive of applicable taxes. Prefer a fully built, delivered system over
+        a billed engagement? See <a href="/turnkey">turnkey institutional systems</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Get a quote that fits the actual work.</h2>
+      <p>These are the bands. The number that matters comes after a short discovery conversation.</p>
+      <p class="cta-actions">
+        <a href="/contact" class="btn">Start a conversation</a>
+        <a href="/services" class="btn-ghost">Browse services</a>
+      </p>
+    </div>
+  </section>
+</Base>

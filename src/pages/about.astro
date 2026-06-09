@@ -1,0 +1,65 @@
+---
+import Base from '../layouts/Base.astro';
+
+const description =
+  'Lodestone Consulting is grounded in active product development across regulated AI — nuclear V&V tooling, medical records processing, institutional-memory systems, document-generation engines. Led by Ryan Hanson, Corvallis, Oregon.';
+---
+<Base title="About" description={description}>
+  <section class="page-head">
+    <div class="wrap">
+      <p class="crumbs"><a href="/">Home</a><span class="sep">/</span><span class="here">About</span></p>
+      <h1>Methodology from doing the work.</h1>
+      <p class="lede">Lodestone Consulting is grounded in active product development across regulated AI — not theorizing about it from the outside.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap two-col">
+      <div>
+        <h2>About</h2>
+        <p>
+          The methodology comes from building real systems: LLM tooling for nuclear verification &amp; validation,
+          medical records processing, institutional-memory platforms, long-form document-generation engines. When
+          we recommend an approach, it's grounded in implementation reality, not a slide. Led by
+          <a href="https://www.linkedin.com/in/ryan-hanson-0a766b30/" target="_blank" rel="noopener">Ryan Hanson</a>
+          out of Corvallis, Oregon — remote-first, travel available.
+        </p>
+        <p>
+          Most consulting in this space falls into one of two camps: management consultants who write decks but don't
+          build, or technical consultants who build but don't think about the institution. We do both. The result is
+          institutional artifacts — methodologies, audits, ConOps, decision frameworks — that hold up under scrutiny
+          and stay useful after we leave.
+        </p>
+        <h2 style="margin-top:1.6em;">Where we've worked</h2>
+        <ul class="value-list">
+          <li><strong>Healthcare &amp; medical AI</strong><span>HIPAA architecture, PHI handling, EHR integration, de-identification pipelines.</span></li>
+          <li><strong>Nuclear energy</strong><span>Airgapped deployment, NRC cyber security, V&amp;V tooling, safety-class workflows.</span></li>
+          <li><strong>Enterprise software</strong><span>Document processing, workflow automation, knowledge management.</span></li>
+          <li><strong>Creative &amp; media</strong><span>Co-narrative AI systems and content-generation pipelines.</span></li>
+        </ul>
+      </div>
+
+      <aside class="meta">
+        <h3>Principles</h3>
+        <ul>
+          <li><strong>Discretion.</strong> Client engagements stay private unless you authorize otherwise. No case studies, no client lists, no name-drops.</li>
+          <li><strong>Durable artifacts.</strong> Documents your successor can use, not your hire-of-the-month.</li>
+          <li><strong>Ship, not just advise.</strong> Decks alone don't change institutions.</li>
+          <li><strong>Vendor-neutral.</strong> No partnerships, no referral fees, no preferred vendors.</li>
+          <li><strong>Honest about scope.</strong> Change orders before work, not invoices after.</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Work with someone who's built the thing.</h2>
+      <p>If your problem lives where the institution meets the technical detail, that's exactly the seam we work.</p>
+      <p class="cta-actions">
+        <a href="/contact" class="btn">Start a conversation</a>
+        <a href="/services" class="btn-ghost">Browse services</a>
+      </p>
+    </div>
+  </section>
+</Base>

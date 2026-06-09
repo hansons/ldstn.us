@@ -1,0 +1,56 @@
+---
+import '../styles/base.css';
+import '../styles/site.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const {
+  title = 'Lodestone Consulting',
+  description = 'Institutional consulting for organizations that need clarity in writing — knowledge capture, audits, decision-grade documents, requirements engineering, and AI-leveraged operations. Comfortable in regulated environments. Corvallis, Oregon.',
+  ogType = 'website',
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://ldstn.us').href;
+const fullTitle = title.includes('Lodestone') ? title : `${title} · Lodestone Consulting`;
+
+// Optional privacy-friendly analytics — set PUBLIC_CF_BEACON_TOKEN in the
+// Cloudflare Pages env (or a local .env) to enable. No token → no beacon.
+const beaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#1a1a1a" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Lodestone Consulting" />
+    <meta name="twitter:card" content="summary" />
+
+    {beaconToken && (
+      <script
+        is:inline
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon={`{"token": "${beaconToken}"}`}
+      ></script>
+    )}
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

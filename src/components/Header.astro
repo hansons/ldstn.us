@@ -1,0 +1,65 @@
+---
+const path = Astro.url.pathname;
+const isActive = (href) =>
+  href === '/' ? path === '/' : path === href || path.startsWith(href + '/');
+
+const links = [
+  { href: '/services', label: 'Services' },
+  { href: '/approach', label: 'Approach' },
+  { href: '/pricing', label: 'Pricing' },
+  { href: '/turnkey', label: 'Turnkey' },
+  { href: '/about', label: 'About' },
+];
+---
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true">
+        <path class="crystal-top" d="M12 3 L21 12 L3 12 Z" />
+        <path class="crystal-bot" d="M3 12 L21 12 L12 21 Z" />
+      </svg>
+      <span class="brand-name">Lodestone</span>
+    </a>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-label="Toggle navigation menu"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+    >
+      <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="4" y1="7" x2="20" y2="7" /><line x1="4" y1="12" x2="20" y2="12" /><line x1="4" y1="17" x2="20" y2="17" />
+      </svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="6" y1="6" x2="18" y2="18" /><line x1="18" y1="6" x2="6" y2="18" />
+      </svg>
+    </button>
+
+    <nav id="primary-nav" aria-label="Primary">
+      {links.map((l) => (
+        <a href={l.href} aria-current={isActive(l.href) ? 'page' : undefined}>{l.label}</a>
+      ))}
+      <a href="/contact" class="nav-cta" aria-current={isActive('/contact') ? 'page' : undefined}>Contact</a>
+    </nav>
+  </div>
+</header>
+
+<script is:inline>
+  (function () {
+    var header = document.querySelector('.site-header');
+    if (!header) return;
+    var toggle = header.querySelector('.nav-toggle');
+    if (!toggle) return;
+    toggle.addEventListener('click', function () {
+      var open = header.classList.toggle('nav-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    header.querySelectorAll('nav a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        header.classList.remove('nav-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>

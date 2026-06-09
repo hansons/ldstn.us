@@ -18,3 +18,12 @@ desktop.ini
 
 # Internal deploy / positioning notes — not part of the published site
 README.md
+
+# Node / Astro
+node_modules/
+dist/
+.astro/
+.env
+.env.*
+!.env.example
+npm-debug.log*

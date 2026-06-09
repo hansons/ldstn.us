@@ -1,0 +1,116 @@
+---
+import Base from '../layouts/Base.astro';
+import { services } from '../data/services.js';
+
+const title = 'Lodestone Consulting — Institutional knowledge work, audits, and decision-grade documents';
+const description =
+  'We help organizations capture tribal knowledge, audit how they actually operate, and produce documents that outlast the people who wrote them. AI-leveraged where it helps. Comfortable in regulated environments. Corvallis, Oregon.';
+---
+<Base title={title} description={description}>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Lodestone Consulting LLC · Corvallis, Oregon</p>
+      <h1>We document operations, run audits, and produce decision-grade research.</h1>
+      <p class="lede">
+        Institutional consulting for organizations that need clarity in writing — from knowledge capture and
+        requirements engineering to AI-leveraged operations. We do the institutional work most consulting won't,
+        and we leave the artifacts behind. Comfortable in regulated environments.
+      </p>
+      <p class="hero-actions">
+        <a href="/contact" class="btn">Start a conversation</a>
+        <a href="/services" class="btn-ghost">See what we do</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>What we do</h2>
+      <p class="section-lede">Six lanes of work. Most engagements draw on more than one.</p>
+      <div class="cards">
+        {services.map((s) => (
+          <a class="card card-link" href={`/services/${s.slug}`}>
+            <h3>{s.name}</h3>
+            <p>{s.summary}</p>
+            <span class="card-more">
+              Explore
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap two-col">
+      <div>
+        <h2>We do both</h2>
+        <p>
+          Most consulting in this space falls into one of two camps: management consultants who write decks but
+          don't build, or technical consultants who build but don't think about the institution. We do both. The
+          result is institutional artifacts — methodologies, audits, ConOps, decision frameworks — that hold up
+          under scrutiny and stay useful after we leave.
+        </p>
+        <dl class="proof">
+          <div>
+            <dt>Built in regulated industries</dt>
+            <dd>Healthcare, nuclear, export-controlled — settings where compliance isn't optional.</dd>
+          </div>
+          <div>
+            <dt>We ship, not just advise</dt>
+            <dd>Production AI systems, V&amp;V toolchains, records pipelines — built, not slideware.</dd>
+          </div>
+          <div>
+            <dt>Vendor-neutral</dt>
+            <dd>No partnerships, no referral fees, no preferred vendors.</dd>
+          </div>
+        </dl>
+      </div>
+      <aside class="meta">
+        <h3>Principles</h3>
+        <ul>
+          <li><strong>Discretion.</strong> Engagements stay private unless you authorize otherwise.</li>
+          <li><strong>Durable artifacts.</strong> Documents your successor can use, not your hire-of-the-month.</li>
+          <li><strong>Ship, not just advise.</strong> Decks alone don't change institutions.</li>
+          <li><strong>Honest about scope.</strong> Change orders before work, not invoices after.</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>Turnkey institutional systems</h2>
+      <p class="section-lede lead-narrow">
+        Want the institutional clarity without running the project to get there? We do all the work — discovery,
+        audit, knowledge capture, methodology, role library — and ship you a configured machine with everything
+        loaded, indexed, and ready to use. It's yours. No recurring contract required.
+      </p>
+      <p><a href="/turnkey" class="btn-ghost">See how turnkey works</a></p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <h2>How we work</h2>
+      <p class="section-lede lead-narrow">
+        Same structure every time, adapted in formality to the size of the work: a no-charge intro call, an NDA
+        if you need one, discovery and scope, a clear Statement of Work, execution on the cadence that fits, and a
+        closeout with knowledge transfer to whoever owns it next.
+      </p>
+      <p><a href="/approach" class="btn-ghost">See the full process</a></p>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Tell us what you're trying to figure out.</h2>
+      <p>Intro calls are 30 minutes, no charge, no commitment. We'll tell you straight whether there's a fit worth exploring.</p>
+      <p class="cta-actions">
+        <a href="/contact" class="btn">Start a conversation</a>
+        <a href="/services" class="btn-ghost">Browse services</a>
+      </p>
+    </div>
+  </section>
+</Base>
